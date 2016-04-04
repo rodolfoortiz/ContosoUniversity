@@ -45,8 +45,8 @@ properties {
   $dev_connection_string_name = "$project_name.ConnectionString"
   $test_connection_string_name = "$project_name.Tests.ConnectionString"
 
-  $devConnectionString = if(test-path env:$dev_connection_string_name) { (get-item env:$dev_connection_string_name).Value } else { "Server=$db_server;Database=$db_name;Trusted_Connection=True;MultipleActiveResultSets=true" }
-  $testConnectionString = if(test-path env:$test_connection_string_name) { (get-item env:$test_connection_string_name).Value } else { "Server=$db_server;Database=$test_db_name;Trusted_Connection=True;MultipleActiveResultSets=true" }
+  $devConnectionString = if(test-path env:$dev_connection_string_name) { (get-item env:$dev_connection_string_name).Value } else { "Server=$db_server;Database=$db_name;User Id=rortiz;Password=rortiz;MultipleActiveResultSets=true" }
+  $testConnectionString = if(test-path env:$test_connection_string_name) { (get-item env:$test_connection_string_name).Value } else { "Server=$db_server;Database=$test_db_name;User Id=rortiz;Password=rortiz;MultipleActiveResultSets=true" }
   
   $db_scripts_dir = "$source_dir\DatabaseMigration"
 
