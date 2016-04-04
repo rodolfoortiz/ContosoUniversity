@@ -173,7 +173,7 @@
 
             private void UpdateInstructorCourses(string[] selectedCourses, Instructor instructorToUpdate)
             {
-                if (selectedCourses == null)
+                if (selectedCourses == null || instructorToUpdate.CourseInstructors == null)
                 {
                     instructorToUpdate.CourseInstructors = new List<CourseInstructor>();
                     return;

@@ -56,8 +56,8 @@
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=1.2.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MediatR, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -84,11 +84,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="roundhouse, Version=0.8.6.0, Culture=neutral, PublicKeyToken=91b86fd44f1f23bc, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\roundhouse\product\bin\roundhouse.dll</HintPath>
+      <HintPath>..\packages\roundhouse.msbuild.0.8.6\lib\roundhouse.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="roundhouse.databases.sqlserver">
-      <HintPath>..\..\..\roundhouse\product\bin\roundhouse.databases.sqlserver.dll</HintPath>
+    <Reference Include="roundhouse.tasks, Version=0.8.6.0, Culture=neutral, PublicKeyToken=91b86fd44f1f23bc, processorArchitecture=x86">
+      <HintPath>..\packages\roundhouse.msbuild.0.8.6\lib\roundhouse.tasks.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Shouldly, Version=2.6.0.0, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
       <HintPath>..\packages\Shouldly.2.6.0\lib\net40\Shouldly.dll</HintPath>
@@ -110,8 +111,6 @@
       <HintPath>..\packages\System.Data.SqlLocalDb.1.14.0\lib\net20\System.Data.SqlLocalDb.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Linq" />
-    <Reference Include="System.Runtime" />
     <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -141,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DBDeploy_MSBuild.proj" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="samples.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
