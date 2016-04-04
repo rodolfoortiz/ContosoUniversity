@@ -8,6 +8,7 @@ properties {
 
   if(-not $version)
   {
+	  Write-Host "no version"
       $version = "0.0.0.1"
   }
 
