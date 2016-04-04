@@ -58,10 +58,10 @@ properties {
 task default -depends InitialPrivateBuild
 task dev -depends DeveloperBuild
 task ci -depends IntegrationBuild
-task udb -depends UpdateDatabase
-task rdb -depends RebuildAllDatabase
-task rdbni -depends RebuildAllDatabaseNoIndexes
-task ? -depends help
+#task udb -depends UpdateDatabase
+#task rdb -depends RebuildAllDatabase
+#task rdbni -depends RebuildAllDatabaseNoIndexes
+#task ? -depends help
 
 task help {
    Write-Help-Header
@@ -83,9 +83,9 @@ task help {
 }
 
 #These are the actual build tasks. They should be Pascal case by convention
-task InitialPrivateBuild -depends Clean, Compile, RebuildAllDatabase
+task InitialPrivateBuild -depends Clean, Compile #, RebuildAllDatabase
 
-task DeveloperBuild -depends Clean, SetDebugBuild, Compile, UpdateDatabase, UpdateTestDatabase
+task DeveloperBuild -depends Clean, SetDebugBuild, Compile #, UpdateDatabase, UpdateTestDatabase
 
 task CompileOnly -depends Clean, SetDebugBuild, Compile
 
