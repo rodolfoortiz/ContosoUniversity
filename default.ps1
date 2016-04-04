@@ -117,7 +117,7 @@ task UpdateDatabase {
 }
 
 task OctoPack {
-    exec { msbuild.exe /t:build /v:q /p:Configuration=$project_config /nologo $source_dir\$project_name.sln /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare=..$octopusPackageDir /p:OctoPackPackageVersion=1.0}
+    exec { msbuild.exe /t:build /v:q /p:Configuration=$project_config /nologo $source_dir\$project_name.sln /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare=..$octopusPackageDir /p:OctoPackPackageVersion=$version}
 }
 
 task UpdateTestDatabase {
