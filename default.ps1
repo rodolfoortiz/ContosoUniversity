@@ -83,7 +83,7 @@ task help {
 }
 
 #These are the actual build tasks. They should be Pascal case by convention
-task InitialPrivateBuild -depends Clean, Compile #, RebuildAllDatabase
+task InitialPrivateBuild -depends Clean, Compile, OctoPack #, RebuildAllDatabase
 
 task DeveloperBuild -depends Clean, SetDebugBuild, Compile #, UpdateDatabase, UpdateTestDatabase
 
