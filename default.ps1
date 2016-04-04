@@ -20,6 +20,7 @@ properties {
   
   Write-Host "**********************************************************************"
   Write-Host "Release Number: $ReleaseNumber"
+  Write-Host "Version: $version"
   Write-Host "**********************************************************************"
   
 
