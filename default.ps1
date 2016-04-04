@@ -116,6 +116,10 @@ task UpdateDatabase {
     deploy-database "Update" $devConnectionString $db_scripts_dir "DEV"
 }
 
+task OctoPack {
+    exec { msbuild.exe /t:build /v:q /p:Configuration=$project_config /nologo $source_dir\$project_name.sln /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare=..$octopusPackageDir /p:OctoPackPackageVersion=1.0}
+}
+
 task UpdateTestDatabase {
     deploy-database "Update" $testConnectionString $db_scripts_dir "TEST"
 }
