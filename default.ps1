@@ -5,6 +5,7 @@ properties {
   Framework '4.5.1'
 
   $project_name = "ContosoUniversity"
+  $project_db_name = "DBDeployment"
 
   if(-not $version)
   {
@@ -60,6 +61,7 @@ properties {
 task default -depends InitialPrivateBuild
 task dev -depends DeveloperBuild
 task ci -depends IntegrationBuild
+task octodb -depends OctoPackDB
 #task udb -depends UpdateDatabase
 #task rdb -depends RebuildAllDatabase
 #task rdbni -depends RebuildAllDatabaseNoIndexes
@@ -123,6 +125,12 @@ Write-Host "Init OctoPack"
     exec { msbuild.exe /t:build /v:q /p:Configuration=$project_config /nologo $source_dir\$project_name.sln /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare=..\\octopackages /p:OctoPackPackageVersion=$version}
 	Write-Host "$version"
 	Write-Host "End OctoPack"
+}
+
+task OctoPackDB -depends Clean {
+Write-Host "Init OctoPack DB"
+    exec { msbuild.exe /t:$project_db_name /v:q /p:Configuration=$project_config /nologo $source_dir\$project_name.sln /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare=..\\octopackages /p:OctoPackPackageVersion=$version}
+	Write-Host "End OctoPack DB"
 }
 
 task UpdateTestDatabase {
