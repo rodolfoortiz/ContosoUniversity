@@ -127,7 +127,7 @@ Write-Host "Init OctoPack"
 	Write-Host "End OctoPack"
 }
 
-task OctoPackDB -depends Clean {
+task OctoPackDB {
 Write-Host "Init OctoPack DB"
     exec { msbuild.exe /t:$project_db_name /v:q /p:Configuration=$project_config /nologo $source_dir\$project_name.sln /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare=..\\octopackages /p:OctoPackPackageVersion=$version}
 	Write-Host "End OctoPack DB"
