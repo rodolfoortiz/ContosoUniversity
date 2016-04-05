@@ -7,7 +7,7 @@
 #
 $roundhouse_version_file = ".\VERSION.TXT"
 $roundhouse_exe_path = ".\rh.exe"
-$scripts_dir = ".\DatabaseMigration\up"
+$scripts_dir = ".\DatabaseMigration"
 $roundhouse_output_dir = ".\output"
 if ($OctopusParameters) {
 $env = $OctopusParameters["RoundhousE.ENV"]
