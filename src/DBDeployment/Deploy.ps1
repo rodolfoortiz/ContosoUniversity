@@ -25,6 +25,7 @@ Write-Host "RoundhousE is going to run on database: " $db_name
 Write-Host "Executing RoundhousE for environment:" $env
 if($dbAction -eq "Update"){
 Write-Host "Update:"
+#Import-Module .\tools\psake\teamcity.psm1
 exec { &$roundhouse_exe_path -s $db_server -d $db_name -f $scripts_dir --env $env --silent -o $roundhouse_output_dir -vf $roundhouse_version_file --transaction }
 }
 if($dbAction -eq "Rebuild"){
