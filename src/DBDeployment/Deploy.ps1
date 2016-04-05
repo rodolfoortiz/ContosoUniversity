@@ -27,5 +27,6 @@ Import-Module PSake
 exec { &$roundhouse_exe_path -s $db_server -d $db_name -f $scripts_dir --env $env --silent -o $roundhouse_output_dir -vf $roundhouse_version_file --transaction }
 }
 if($dbAction -eq "Rebuild"){
+Import-Module PSake
 exec { &$roundhouse_exe_path -s $db_server -d $db_name -f $scripts_dir --env $env --silent -drop -o $roundhouse_output_dir -vf $roundhouse_version_file }
 }
