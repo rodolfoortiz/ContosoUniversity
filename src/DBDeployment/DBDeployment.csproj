@@ -45,6 +45,9 @@
     <Content Include="DatabaseMigration\up\000001.Initial_Schema.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="DatabaseMigration\up\000002.create_table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Deploy.ps1" />
