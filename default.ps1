@@ -143,6 +143,7 @@ task Compile -depends Clean {
 }
 
 task Clean {
+	Get-ChildItem .\ -include bin,obj -Recurse | foreach ($_) { remove-item $_.fullname -Force -Recurse }
     exec { msbuild /t:clean /v:q /p:Configuration=$project_config /p:Platform="Any CPU" $source_dir\$project_name.sln }
 }
 
