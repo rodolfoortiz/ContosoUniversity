@@ -88,7 +88,7 @@
 
         public void DoClean(Action<DbContext> action)
         {
-            var dbContext = new SchoolContext("Server=localhost;Database=ContosoUniversity;User Id=rortiz;Password=rortiz;");
+            var dbContext = new SchoolContext("Server=localhost;Database=ContosoUniversity.Tests;User Id=rortiz;Password=rortiz;");
 
             try
             {

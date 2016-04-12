@@ -19,7 +19,7 @@
             public InnerFactory()
             {
                 var container = IoC.Initialize();
-                container.Configure(cfg => cfg.For<SchoolContext>().Use(() => new SchoolContext("Server=localhost;Database=ContosoUniversity;User Id=rortiz;Password=rortiz;")).Transient());
+                container.Configure(cfg => cfg.For<SchoolContext>().Use(() => new SchoolContext("Server=localhost;Database=ContosoUniversity.Tests;User Id=rortiz;Password=rortiz;")).Transient());
                 Container = container;
             }
 
