@@ -1,11 +1,11 @@
-﻿using AutoFixture.AutoEF;
+﻿//using AutoFixture.AutoEF;
 using ContosoUniversity.DAL;
 using ContosoUniversity.DependencyResolution;
 
 namespace ContosoUniversity.IntegrationTests
 {
     using Ploeh.AutoFixture;
-    using System.Web.Mvc;
+    //using System.Web.Mvc;
 
     public abstract class AutoFixtureCustomization : ICustomization
     {
