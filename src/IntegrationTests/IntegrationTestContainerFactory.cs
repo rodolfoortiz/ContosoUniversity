@@ -19,9 +19,7 @@
             public InnerFactory()
             {
                 var container = IoC.Initialize();
-                var connString = LocalDbFactory.Instance.CreateConnectionStringBuilder();
-                connString.InitialCatalog = "ContosoUniversity";
-                container.Configure(cfg => cfg.For<SchoolContext>().Use(() => new SchoolContext(connString.ToString())).Transient());
+                container.Configure(cfg => cfg.For<SchoolContext>().Use(() => new SchoolContext("Server=localhost;Database=ContosoUniversity;User Id=rortiz;Password=rortiz;")).Transient());
                 Container = container;
             }
 

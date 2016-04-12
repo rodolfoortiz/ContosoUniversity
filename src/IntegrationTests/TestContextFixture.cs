@@ -88,9 +88,7 @@
 
         public void DoClean(Action<DbContext> action)
         {
-            var connString = LocalDbFactory.Instance.CreateConnectionStringBuilder();
-            connString.InitialCatalog = "ContosoUniversity";
-            var dbContext = new SchoolContext(connString.ToString());
+            var dbContext = new SchoolContext("Server=localhost;Database=ContosoUniversity;User Id=rortiz;Password=rortiz;");
 
             try
             {

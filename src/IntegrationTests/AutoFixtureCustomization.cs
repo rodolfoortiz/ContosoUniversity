@@ -1,6 +1,11 @@
-﻿namespace ContosoUniversity.IntegrationTests
+﻿using AutoFixture.AutoEF;
+using ContosoUniversity.DAL;
+using ContosoUniversity.DependencyResolution;
+
+namespace ContosoUniversity.IntegrationTests
 {
     using Ploeh.AutoFixture;
+    using System.Web.Mvc;
 
     public abstract class AutoFixtureCustomization : ICustomization
     {
@@ -8,6 +13,7 @@
         {
             fixture.Customizations.Add(new IdOmitterBuilder());
             fixture.Customizations.Add(new OmitListBuilder());
+            //fixture.Customize(new EntityCustomization(new DbContextEntityTypesProvider(typeof(SchoolContext))));
 
             CustomizeFixture(fixture);
 
