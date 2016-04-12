@@ -24,7 +24,7 @@
 
             //fixture.DoClean(ctx => course = ctx.Set<Course>().FirstOrDefault(c => c.Title == command.Title));
 
-            command.Title.ShouldBe("Blarg");
+            command.Title.ShouldBe("Blarg1");
             //course.Title.ShouldBe(command.Title);
             //course.Credits.ShouldBe(command.Credits);
             //course.DepartmentID.ShouldBe(dept.DepartmentID);
